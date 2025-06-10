@@ -9,12 +9,13 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<Layout title="My Own Blog Posts">
-  <Section title="My Blog Posts">
+<Layout title="Lain Team - Our Posts">
+  <Section title="Our Posts" className="text-green">
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
       {
         posts.map((post) => (
           <BlogPostCard
+            author={post.data.author}
             slug={post.id}
             title={post.data.title}
             excerpt={post.data.description}

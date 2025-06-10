@@ -4,13 +4,19 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "LoveLetter";
+  src: url("/fonts/LoveLetter.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
 body {
-  font-family: "VCR", monospace !important;
+  font-family: "LoveLetter";
 }
 
 pre,
 code {
-  font-family: "VCR", monospace !important;
+  font-family: monospace;
   font-weight: 100;
 }
 
