@@ -6,16 +6,16 @@ https://lain-team.github.io/writeups/
 
 To publish your post on https://lain-team.github.io/writeups/
 
-1. Create `src/content/you-blog-post.md` file
+1. Create `src/content/blog/you-blog-post.md` file
 2. Write your post using `N0Ps-CTF-Web-Casino.md` for reference
-3. git add . && git commit 'New post' && git push
+3. `git add . && git commit 'New post' && git push`
 4. Wait for build completion
 5. ???
 6. Profit!
 
 ## Check how your post looks before pushing
 
-Install deps:
+Install deps (once):
 ```bash
 npm run i
 ```
