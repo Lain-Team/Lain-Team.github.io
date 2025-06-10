@@ -12,3 +12,18 @@ To publish your post on https://lain-team.github.io/writeups/
 4. Wait for build completion
 5. ???
 6. Profit!
+
+## Check how your post looks before pushing
+
+Install deps:
+```bash
+npm run i
+```
+
+Build and run:
+```bash
+npm run build
+npm run preview
+```
+
+Visit http://localhost:4321/writeups
